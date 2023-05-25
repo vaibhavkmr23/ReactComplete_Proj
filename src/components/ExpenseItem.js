@@ -1,15 +1,18 @@
-import './ExpenseItem.css';
+import "./ExpenseItem.css";
 
-const ExpenseItem = ()=>{
-    return (
-        <div className='expense-item'>
-            <div>May @5 2023</div>
-            <div className='expense-tem__description'>
-                <h2>Car Insurance</h2>
-                <div className='expense-item__price'>$295.54</div>
-            </div>
-        </div>
-    )
-}
+const ExpenseItem = () => {
+  const expenseDate = new Date(2023, 5, 23);
+  const expenseTitle = "Car Insurance";
+  const expeseAmount = 295.54;
+  return (
+    <div className="expense-item">
+      <div>{expenseDate.toISOString()}</div>
+      <div className="expense-tem__description">
+        <h2>{expenseTitle}</h2>
+        <div className="expense-item__price">${expeseAmount}</div>
+      </div>
+    </div>
+  );
+};
 
 export default ExpenseItem;
