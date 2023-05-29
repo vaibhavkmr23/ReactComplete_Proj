@@ -1,12 +1,18 @@
 import "./ExpenseItem.css";
 
 const ExpenseItem = (props) => {
-  // const expenseDate = new Date(2023, 5, 23);
-  // const expenseTitle = "Car Insurance";
-  // const expeseAmount = 295.54;
+  const month = props.date.toLocaleString("en-US", { month: "long" });
+  const day = props.date.toLocaleString("en-US", { day: "2-digit" });
+  const year = props.date.toLocaleString("en-US", { year: "numeric" });
+  // console.log(month, "monthh is");
+
   return (
     <div className="expense-item">
-      <div>{props.date.toISOString()}</div>
+      <div>
+        <div>{day}</div>
+        <div>{month}</div>
+        <div>{year}</div>
+      </div>
       <div className="expense-tem__description">
         <h2>{props.title}</h2>
         <div className="expense-item__price">${props.amount}</div>
